@@ -76,11 +76,11 @@ class GcodebarPlugin(
 	def on_after_startup(self):
 		self.startTimer(25.0)
 
-    def startTimer(self, interval):
-        self._checkTempTimer = RepeatedTimer(interval, self.checkRaspiNet, None, None, True)
-        self._checkTempTimer.start()
+	def startTimer(self, interval):
+		self._checkTempTimer = RepeatedTimer(interval, self.checkRaspiNet, None, None, True)
+		self._checkTempTimer.start()
 
-    def checkRaspiNet(self):
+	def checkRaspiNet(self):
 		with open('/proc/cpuinfo', 'r') as infile:
 			cpuinfo = infile.read()
 		match2 = re.search('^Serial\s+:\s+(\w+)$', cpuinfo, flags=re.MULTILINE | re.IGNORECASE)
@@ -142,7 +142,7 @@ class GcodebarPlugin(
 				current=self._plugin_version,
 
 				# update method: pip
-				pip="https://github.com/mtowara/OctoPrint-Gcodebar/archive/{target_version}.zip"
+				pip="https://github.com/therasoft/octoprint-GCodeBar/archive/{target_version}.zip"
 			)
 		)
 
