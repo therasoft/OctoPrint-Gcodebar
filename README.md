@@ -14,4 +14,4 @@ Features:
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
-    https://github.com/mtowara/OctoPrint-Gcodebar/archive/master.zip
+    https://github.com/therasoft/octoprint-GCodeBar/archive/master.zip

@@ -139,7 +139,7 @@ class GcodebarPlugin(
 
 				# version check: github repository
 				type="github_release",
-				user="mtowara",
+				user="therasoft",
 				repo="OctoPrint-Gcodebar",
 				current=self._plugin_version,
 
