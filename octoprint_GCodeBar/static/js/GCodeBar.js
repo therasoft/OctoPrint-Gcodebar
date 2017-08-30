@@ -11,6 +11,7 @@ $(function() {
         self.terminal = parameters[1];
         self.commandString = ko.observable("");
         self.cmdHistoryIdx=-1;
+		self.raspiNet = ko.observable()
         self.onBeforeBinding = function() {
             self.cmdHistoryIdx=self.terminal.cmdHistory.length;
         }
@@ -26,6 +27,10 @@ $(function() {
 
             self.cmdHistoryIdx = self.terminal.cmdHistory.length;
             self.commandString("");
+        };
+		
+		self.onDataUpdaterPluginMessage = function(plugin, data) {
+            self.raspiNet(_.sprintf("Raspi: %s", data.serial));
         };
 
         self.handleKeyUp = function (d, e) {
