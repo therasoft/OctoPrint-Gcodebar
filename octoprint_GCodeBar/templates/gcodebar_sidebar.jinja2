@@ -4,11 +4,14 @@
         <button type="submit" class="btn" data-bind="enable: loginState.isUser() && terminal.isOperational(), click: sendCommand">Enviar</button>
     </div>
 	<br>
-	<span title="Numero de Serie de la RPi">S#</span>: <strong data-bind="text: plugin_gcodebar_serial">{{ plugin_gcodebar_serial|escape }}</strong><br>
-	<span title="IP de la Impresora">IP</span>: <strong data-bind="text: plugin_gcodebar_ipadr">{{ plugin_gcodebar_ipadr|escape }}</strong><br>
-	<span title="Estado Wifi">Modo Wifi</span>: <strong data-bind="text: plugin_gcodebar_netmode">{{ plugin_gcodebar_netmode|escape }}</strong><br>
-	<span title="Punto de Acceso">Nombre AP</span>: <strong data-bind="text: plugin_gcodebar_wifiname">{{ plugin_gcodebar_wifiname|escape }}</strong><br>
-	<span title="MAC Address Wifi">MAC Wifi</span>: <strong data-bind="text: plugin_gcodebar_mac">{{ plugin_gcodebar_mac|escape }}</strong><br>
+	<span title="Numero de Serie de la RPi">S#</span>: <strong data-bind="text: serial">{{ plugin_gcodebar_serial|escape }}</strong><br>
+	<span title="IP de la Impresora">IP</span>: <strong data-bind="text: ipadr">{{ plugin_gcodebar_ipadr|escape }}</strong><br>
+	<span title="Estado Wifi">Modo Wifi</span>: <strong data-bind="text: netmode">{{ plugin_gcodebar_netmode|escape }}</strong><br>
+	<span title="Punto de Acceso">Nombre AP</span>: <strong data-bind="text: wifiname">{{ plugin_gcodebar_wifiname|escape }}</strong><br>
+	<span title="MAC Address Wifi">MAC Wifi</span>: <strong data-bind="text: mac">{{ plugin_gcodebar_mac|escape }}</strong><br>
 	<span title="Canal Wifi">Canal Wifi</span>: <strong data-bind="text: plugin_gcodebar_channel">{{ plugin_gcodebar_channel|escape }}</strong><br>
-	
+
+	<p class="nav navbar-text" data-bind="html: raspiNet"></p>
+	<span title="TEST">TEST</span>: <strong data-bind="text: raspiNet">{{ plugin_gcodebar_raspiNet|escape }}</strong><br>
+
 </div>
