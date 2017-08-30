@@ -30,7 +30,7 @@ $(function() {
         };
 		
 		self.onDataUpdaterPluginMessage = function(plugin, data) {
-            self.raspiNet(_.sprintf("Raspi: %s", data.serial));
+            self.raspiNet(_.sprintf("Raspi: %s", plugin));
         };
 
         self.handleKeyUp = function (d, e) {

@@ -13,6 +13,8 @@ class GcodebarPlugin(
 	octoprint.plugin.TemplatePlugin
 	):
 
+	def __init__(self):
+		self._checkNetTimer = None
 	##~~ SettingsPlugin mixin
 
 	def get_settings_defaults(self):
@@ -74,11 +76,11 @@ class GcodebarPlugin(
 		
 
 	def on_after_startup(self):
-		self.startTimer(25.0)
+		self.startTimer(5.0)
 
 	def startTimer(self, interval):
-		self._checkTempTimer = RepeatedTimer(interval, self.checkRaspiNet, None, None, True)
-		self._checkTempTimer.start()
+		self._checkNetTimer = RepeatedTimer(interval, self.checkRaspiNet, None, None, True)
+		self._checkNetTimer.start()
 
 	def checkRaspiNet(self):
 		with open('/proc/cpuinfo', 'r') as infile:
