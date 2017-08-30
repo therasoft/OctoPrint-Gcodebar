@@ -46,6 +46,53 @@ class GcodebarPlugin(
 			NetwMode = "Desconocido"
 		else:
 			if match2.group(1)=="managed":
+				NetwMode = "Conectado a Red WiFi."
+			elif match2.group(1)=="AP":
+				NetwMode = "Modo Punto de Acceso."
+			else:
+				NetwMode = "WiFi desconectado Starting"
+
+		match2=re.search('ssid\s+(\w+)$', NetInfo, flags=re.MULTILINE | re.IGNORECASE)
+		if match2 is None:
+			NetwSSid = "Desconocido"
+		else:
+			NetwSSid = match2.group(1)
+
+		match2=re.search('channel\s+(\w+)\s', NetInfo, flags=re.MULTILINE | re.IGNORECASE)
+		if match2 is None:
+			NetwChann = "Desconocido"
+		else:
+			NetwChann = match2.group(1)
+
+		match2=re.search('addr\s+(.*)$', NetInfo, flags=re.MULTILINE | re.IGNORECASE)
+		if match2 is None:
+			NetwMAC = "Desconocido"
+		else:
+			NetwMAC = match2.group(1)
+
+		return dict(serial=RPiSerial,ipadr=RPiIPAdr,wifiname=NetwSSid,channel=NetwChann,netmode=NetwMode,mac=NetwMAC)
+		
+
+	def on_after_startup(self):
+		self.startTimer(25.0)
+
+    def startTimer(self, interval):
+        self._checkTempTimer = RepeatedTimer(interval, self.checkRaspiNet, None, None, True)
+        self._checkTempTimer.start()
+
+    def checkRaspiNet(self):
+		with open('/proc/cpuinfo', 'r') as infile:
+			cpuinfo = infile.read()
+		match2 = re.search('^Serial\s+:\s+(\w+)$', cpuinfo, flags=re.MULTILINE | re.IGNORECASE)
+		RPiSerial = match2.group(1)
+		p2 = subprocess.Popen("hostname -I", shell=True, stdout=subprocess.PIPE).stdout.read()
+		RPiIPAdr = p2
+		NetInfo = subprocess.Popen('iw wlan0 info', shell=True, stdout=subprocess.PIPE).stdout.read()
+		match2=re.search('type\s+(\w+)$', NetInfo, flags=re.MULTILINE | re.IGNORECASE)
+		if match2 is None:
+			NetwMode = "Desconocido"
+		else:
+			if match2.group(1)=="managed":
 				NetwMode = "Conectado a Red WiFi"
 			elif match2.group(1)=="AP":
 				NetwMode = "Modo Punto de Acceso"
@@ -69,8 +116,7 @@ class GcodebarPlugin(
 			NetwMAC = "Desconocido"
 		else:
 			NetwMAC = match2.group(1)
-
-		return dict(serial=RPiSerial,ipadr=RPiIPAdr,wifiname=NetwSSid,channel=NetwChann,netmode=NetwMode,mac=NetwMAC)
+		self._plugin_manager.send_plugin_message(self._identifier, dict(serial=RPiSerial,ipadr=RPiIPAdr,wifiname=NetwSSid,channel=NetwChann,netmode=NetwMode,mac=NetwMAC))
 		
 	def find_between( s, first, last ):
 		try:
