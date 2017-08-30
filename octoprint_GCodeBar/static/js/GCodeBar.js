@@ -11,7 +11,8 @@ $(function() {
         self.terminal = parameters[1];
         self.commandString = ko.observable("");
         self.cmdHistoryIdx=-1;
-		self.raspiNet = ko.observable()
+		self.raspiNet = ko.observable();
+		
         self.onBeforeBinding = function() {
             self.cmdHistoryIdx=self.terminal.cmdHistory.length;
         }
