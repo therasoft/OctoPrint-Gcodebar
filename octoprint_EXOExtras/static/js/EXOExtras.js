@@ -5,7 +5,7 @@
  * License: AGPLv3
  */
 $(function() {
-    function GcodebarViewModel(parameters) {
+    function EXOExtrasViewModel(parameters) {
         var self = this;
         self.loginState = parameters[0];
         self.terminal = parameters[1];
@@ -62,7 +62,7 @@ $(function() {
 
     // view model class, parameters for constructor, container to bind to
     OCTOPRINT_VIEWMODELS.push([
-        GcodebarViewModel,
+        EXOExtrasViewModel,
         ["loginStateViewModel","terminalViewModel"],
         ["#gcode_bar"]
     ]);

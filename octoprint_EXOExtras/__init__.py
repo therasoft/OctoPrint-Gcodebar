@@ -156,7 +156,7 @@ __plugin_name__ = "EXOExtras Plugin"
 
 def __plugin_load__():
 	global __plugin_implementation__
-	__plugin_implementation__ = GcodebarPlugin()
+	__plugin_implementation__ = EXOExtrasPlugin()
 
 	global __plugin_hooks__
 	__plugin_hooks__ = {
