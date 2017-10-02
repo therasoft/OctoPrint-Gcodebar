@@ -1,5 +1,5 @@
 /*
- * View model for OctoPrint-Gcodebar
+ * View model for OctoPrint-EXOExtras
  *
  * Author: Markus Towara
  * License: AGPLv3

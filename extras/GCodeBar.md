@@ -1,17 +1,17 @@
 ---
 layout: plugin
 
-id: GCodeBar
-title: OctoPrint-Gcodebar
+id: EXOExtras
+title: OctoPrint-EXOExtras
 description: Plugin for Octoprint to allow sending GCode commands from the control tab
 author: Markus Towara
 license: AGPLv3
 
 date: 2015-09-01
 
-homepage: https://github.com/mtowara/OctoPrint-Gcodebar
-source: https://github.com/mtowara/OctoPrint-Gcodebar
-archive: https://github.com/mtowara/OctoPrint-Gcodebar/archive/master.zip
+homepage: https://github.com/therasoft/octoprint-EXOExtras
+source: https://github.com/therasoft/octoprint-EXOExtras
+archive: https://github.com/therasoft/octoprint-EXOExtras/archive/master.zip
 
 follow_dependency_links: false
 
@@ -21,11 +21,11 @@ tags:
 - sidebar
 
 screenshots:
-- url: https://github.com/mtowara/OctoPrint-Gcodebar/blob/master/doc/screen.png
+- url: https://github.com/therasoft/octoprint-EXOExtras/blob/master/doc/screen.png
   alt: Screenshot
   caption: Send Custom GCodes
 
-featuredimage: https://github.com/mtowara/OctoPrint-Gcodebar/blob/master/doc/screen.png
+featuredimage: https://github.com/therasoft/octoprint-EXOExtras/blob/master/doc/screen.png
 
 compatibility:
   # list of compatible versions, for example 1.2.0. If left empty no specific version requirement will be assumed
@@ -39,7 +39,7 @@ compatibility:
   - macos
 ---
 
-# OctoPrint-Gcodebar
+# OctoPrint-EXOExtras
 
 Plugin for Octoprint to allow sending GCode commands from the sidebar.
 
@@ -55,4 +55,4 @@ Features:
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
-    https://github.com/mtowara/OctoPrint-Gcodebar/archive/master.zip
+    https://github.com/therasoft/octoprint-EXOExtras/archive/master.zip

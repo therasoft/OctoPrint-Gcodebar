@@ -7,7 +7,7 @@ import re
 import shlex 
 import subprocess
 
-class GcodebarPlugin(
+class EXOExtrasPlugin(
 	octoprint.plugin.SettingsPlugin,
 	octoprint.plugin.AssetPlugin,
 	octoprint.plugin.TemplatePlugin
@@ -25,9 +25,9 @@ class GcodebarPlugin(
     ##~~ AssetPlugin API
 	def get_assets(self):
 		return {
-			"js": ["js/GCodeBar.js"],
-			"css": ["css/GCodeBar.css"],
-			"less": ["less/GCodeBar.less"]
+			"js": ["js/EXOExtras.js"],
+			"css": ["css/EXOExtras.css"],
+			"less": ["less/EXOExtras.less"]
 		} 		
 		
 		
@@ -133,18 +133,18 @@ class GcodebarPlugin(
 		# Plugin here. See https://github.com/foosel/OctoPrint/wiki/Plugin:-Software-Update
 		# for details.
 		return dict(
-			gcodebar=dict(
-				displayName="Gcodebar Plugin",
+			exoextras=dict(
+				displayName="EXOExtras Plugin",
 				displayVersion=self._plugin_version,
 
 				# version check: github repository
 				type="github_release",
 				user="therasoft",
-				repo="OctoPrint-Gcodebar",
+				repo="OctoPrint-EXOExtras",
 				current=self._plugin_version,
 
 				# update method: pip
-				pip="https://github.com/therasoft/octoprint-GCodeBar/archive/{target_version}.zip"
+				pip="https://github.com/therasoft/octoprint-EXOExtras/archive/{target_version}.zip"
 			)
 		)
 
@@ -152,7 +152,7 @@ class GcodebarPlugin(
 # If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
 # ("OctoPrint-PluginSkeleton"), you may define that here. Same goes for the other metadata derived from setup.py that
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
-__plugin_name__ = "Gcodebar Plugin"
+__plugin_name__ = "EXOExtras Plugin"
 
 def __plugin_load__():
 	global __plugin_implementation__

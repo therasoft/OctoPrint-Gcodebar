@@ -1,4 +1,4 @@
-# OctoPrint-Gcodebar
+# OctoPrint-EXOExtras
 
 Plugin for Octoprint to allow sending GCode commands from the sidebar.
 
@@ -14,4 +14,4 @@ Features:
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
-    https://github.com/therasoft/octoprint-GCodeBar/archive/master.zip
+    https://github.com/therasoft/octoprint-EXOExtras/archive/master.zip

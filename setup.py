@@ -4,30 +4,30 @@
 ### Do not forget to adjust the following variables to your own plugin.
 
 # The plugin's identifier, has to be unique
-plugin_identifier = "gcodebar"
+plugin_identifier = "exoextras"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
-plugin_package = "octoprint_GCodeBar"
+plugin_package = "octoprint_EXOExtras"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
-plugin_name = "OctoPrint-Gcodebar"
+plugin_name = "OctoPrint-EXOExtras"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "0.1.6"
+plugin_version = "0.1.0"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
-plugin_description = "Plugin for Octoprint to allow sending GCode commands from the sidebar"
+plugin_description = "Plugin to Show Printer IP Address"
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "Markus Towara"
+plugin_author = "Mariano Ronchi"
 
 # The plugin's author's mail address.
-plugin_author_email = "mtowara@gmail.com"
+plugin_author_email = "mronchi@gmail.com"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
-plugin_url = "https://github.com/therasoft/octoprint-GCodeBar"
+plugin_url = "https://github.com/therasoft/octoprint-EXOExtras"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data via __plugin_license__ in the plugin module
 plugin_license = "AGPLv3"
